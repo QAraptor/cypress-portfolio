@@ -1,0 +1,14 @@
+{
+    "entity_01":  { "name": "TestUser_01", "email": "testuser01@example.com", "password": "Password123!" },
+    
+    
+    
+    
+    
+    
+    "entity_02":  { "fullName": "TestUser_003", "email": "testysuseers002903945@gmail.com", "password": "Password1234!",
+        "firstName": "Smoky", "lastName": "Jones", "company": "ABC Company","address": "124 Test Str",
+        "address2": "748 Tinsel Road",  "country": "Canada",  "state": "Virginia",  "city": "lexington",
+        "zipcode": "37382",  "mobile": "932-292-4839"}
+}
+  

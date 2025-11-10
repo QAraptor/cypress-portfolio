@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "lib": ["es6", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "types": ["cypress", "node"],
+  },
+  "include": ["cypress/**/*.ts", "cypress/**/*.d.ts"]
+}
