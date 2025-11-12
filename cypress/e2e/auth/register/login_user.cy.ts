@@ -7,6 +7,7 @@ describe('Login', () => {
   beforeEach(() => {
     cy.visit('https://www.automationexercise.com');
   });
+
   it('Test Case 1: Register User', () => {
 
     cp.homePage.verifyHomeTitle()
@@ -34,13 +35,40 @@ describe('Login', () => {
     cp.accountInfoPage.enterMobile(fx.users.entity_02.mobile)
     cp.accountInfoPage.createAccount()
     cp.accountInfoPage.verifyAccount()
+    /*
     cp.accountInfoPage.clickContinueBtn()
     cp.homePage.deleteAccount()
     cp.accountInfoPage.verifyAccountDeleted()
     cp.accountInfoPage.clickContinueBtn()
-
-    
-   
+    */
     
   });
+
+    it('Test Case 2: Login User with correst email and password', () => {
+      cy.navigateSignup();
+      cp.loginPage.verifyLoginHeader();
+      cp.loginPage.enterLoginEmail(fx.users.entity_02.email)
+      cp.loginPage.enterPassword(fx.users.entity_02.password)
+      cp.loginPage.clickLogin();
+      cp.homePage.verifyLoggedInAs(fx.users.entity_02.username)
+      cp.homePage.deleteAccount();
+      cp.accountInfoPage.verifyAccountDeleted();
+
+ });
+
+   it.only('Test Case 5: Register User with existing email', () => {
+    cp.homePage.verifyHomeTitle()
+    cp.homePage.goToSignup()
+    cp.loginPage.verifySignup()
+    cp.loginPage.enterSignupName(fx.users.entity_02.fullName)
+    cp.loginPage.enterSignupEmail(fx.users.entity_02.email)
+    cp.loginPage.submitSignup()
+    cp.loginPage.verifyEmailExistsMessage()
+
+    
+
+   });
+
+
+
 });

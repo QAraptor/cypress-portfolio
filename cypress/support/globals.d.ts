@@ -13,6 +13,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       startSignup(user: { name: string; email: string }): Chainable<void>;
+      navigateSignup(): Chainable<void>;
     }
   }
 }

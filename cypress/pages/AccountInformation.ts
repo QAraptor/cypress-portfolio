@@ -51,7 +51,7 @@ export class AccountInformationPage {
     this.elements.year().select('1995');
   }
   enterCompany(company: string) {
-    this.elements.password().clear().type(company);
+    this.elements.company().clear().type(company);
   }
   enterFirstName(firstName: string) {
     this.elements.firstName().clear().type(firstName);

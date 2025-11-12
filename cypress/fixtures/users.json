@@ -1,14 +1,171 @@
 {
-    "entity_01":  { "name": "TestUser_01", "email": "testuser01@example.com", "password": "Password123!" },
-    
-    
-    
-    
-    
-    
-    "entity_02":  { "fullName": "TestUser_003", "email": "testysuseers002903945@gmail.com", "password": "Password1234!",
-        "firstName": "Smoky", "lastName": "Jones", "company": "ABC Company","address": "124 Test Str",
-        "address2": "748 Tinsel Road",  "country": "Canada",  "state": "Virginia",  "city": "lexington",
-        "zipcode": "37382",  "mobile": "932-292-4839"}
+  "entity_01": {
+    "fullName": "TestUser_001",
+    "email": "testuser001_alpha@gmail.com",
+    "password": "Password123!",
+    "firstName": "Avery",
+    "lastName": "Coleman",
+    "company": "BlueSky Labs",
+    "address": "101 River Street",
+    "address2": "Suite 12B",
+    "country": "United States",
+    "state": "Texas",
+    "city": "Austin",
+    "zipcode": "73301",
+    "mobile": "512-349-9382",
+    "username": "averycole001"
+  },
+
+  "entity_02": {
+    "fullName": "TestUser_002",
+    "email": "testuser002_wave@gmail.com",
+    "password": "Password123!",
+    "firstName": "Liam",
+    "lastName": "Hartman",
+    "company": "Evergreen Corp",
+    "address": "452 Oak Avenue",
+    "address2": "Apt 4C",
+    "country": "United States",
+    "state": "Florida",
+    "city": "Tampa",
+    "zipcode": "33601",
+    "mobile": "813-442-2894",
+    "username": "TestUser_002"
+  },
+
+  "entity_03": {
+    "fullName": "TestUser_003",
+    "email": "testuser003_coast@gmail.com",
+    "password": "Password123!",
+    "firstName": "Sofia",
+    "lastName": "Park",
+    "company": "Clearline Analytics",
+    "address": "891 Harbor Lane",
+    "address2": "Floor 3",
+    "country": "Canada",
+    "state": "Ontario",
+    "city": "Toronto",
+    "zipcode": "M5B 2H1",
+    "mobile": "647-392-1584",
+    "username": "TestUser_003testuser003"
+  },
+
+  "entity_04": {
+    "fullName": "TestUser_004",
+    "email": "testuser004_river@gmail.com",
+    "password": "Password123!",
+    "firstName": "Marcus",
+    "lastName": "King",
+    "company": "NorthStar Digital",
+    "address": "321 Elm Parkway",
+    "address2": "Unit 7",
+    "country": "United States",
+    "state": "Colorado",
+    "city": "Denver",
+    "zipcode": "80201",
+    "mobile": "720-550-3981",
+    "username": "marcusking004"
+  },
+
+  "entity_05": {
+    "fullName": "TestUser_005",
+    "email": "testuser005_delta@gmail.com",
+    "password": "Password123!",
+    "firstName": "Emily",
+    "lastName": "Graves",
+    "company": "Atlas Innovations",
+    "address": "77 Beacon Drive",
+    "address2": "Building C",
+    "country": "United States",
+    "state": "Georgia",
+    "city": "Savannah",
+    "zipcode": "31401",
+    "mobile": "912-788-5504",
+    "username": "emilygraves005"
+  },
+
+  "entity_06": {
+    "fullName": "TestUser_006",
+    "email": "testuser006_shadow@gmail.com",
+    "password": "Password123!",
+    "firstName": "Noah",
+    "lastName": "Patel",
+    "company": "Horizon Data Group",
+    "address": "209 Willow Bend",
+    "address2": "Suite 18",
+    "country": "Canada",
+    "state": "British Columbia",
+    "city": "Vancouver",
+    "zipcode": "V5K 0A1",
+    "mobile": "604-227-9310",
+    "username": "noahpatel006"
+  },
+
+  "entity_07": {
+    "fullName": "TestUser_007",
+    "email": "testuser007_skylight@gmail.com",
+    "password": "Password123!",
+    "firstName": "Grace",
+    "lastName": "Henderson",
+    "company": "NexTech Robotics",
+    "address": "998 Valley Road",
+    "address2": "Warehouse 4",
+    "country": "United States",
+    "state": "Utah",
+    "city": "Salt Lake City",
+    "zipcode": "84101",
+    "mobile": "385-442-9981",
+    "username": "gracehend007"
+  },
+
+  "entity_08": {
+    "fullName": "TestUser_008",
+    "email": "testuser008_orion@gmail.com",
+    "password": "Password123!",
+    "firstName": "Mason",
+    "lastName": "Riley",
+    "company": "Silverline Productions",
+    "address": "14 Sunrise Terrace",
+    "address2": "",
+    "country": "United States",
+    "state": "North Carolina",
+    "city": "Charlotte",
+    "zipcode": "28202",
+    "mobile": "704-298-6632",
+    "username": "masonriley008"
+  },
+
+  "entity_09": {
+    "fullName": "TestUser_009",
+    "email": "testuser009_bright@gmail.com",
+    "password": "Password123!",
+    "firstName": "Chloe",
+    "lastName": "Ramirez",
+    "company": "Crystal Technologies",
+    "address": "552 Pine Grove",
+    "address2": "Unit 5A",
+    "country": "United States",
+    "state": "Arizona",
+    "city": "Phoenix",
+    "zipcode": "85001",
+    "mobile": "602-503-9988",
+    "username": "chloeram009"
+  },
+
+  "entity_10": {
+    "fullName": "TestUser_010",
+    "email": "testuser010_nebula@gmail.com",
+    "password": "Password123!",
+    "firstName": "Ethan",
+    "lastName": "Bishop",
+    "company": "PrimeWave Solutions",
+    "address": "874 Meadow Ridge",
+    "address2": "Suite 20C",
+    "country": "United States",
+    "state": "Virginia",
+    "city": "Richmond",
+    "zipcode": "23219",
+    "mobile": "804-399-7212",
+    "username": "ethanbishop010"
+  }
 }
-  
