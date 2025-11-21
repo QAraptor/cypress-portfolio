@@ -6,9 +6,9 @@ export class AccountInformationPage {
     password: () => cy.get('#password'),
     firstName: () => cy.get('#first_name'),
     lastName: () => cy.get('#last_name'),
-    day: () => cy.get('#days'),
-    month: () => cy.get('#months'),
-    year: () => cy.get('#years'),
+    day:  () => cy.get('#days'),
+    month: () => cy.get('select[data-qa="months"]'),
+    year: () => cy.get('select[data-qa="years"]'),
     newsletterCheckbox: () => cy.get('#newsletter'),
     specialOffersCheckbox: () => cy.get('#optin'),
     company: () => cy.get("input[data-qa='company']"),
@@ -45,13 +45,25 @@ export class AccountInformationPage {
   createPassword(password: string) {
     this.elements.password().clear().type(password);
   }
-  enterDateOfBirth() {
-    this.elements.day().select('12');
-    this.elements.month().select('March');
-    this.elements.year().select('1995');
-  }
+
+  enterDay(dayValue: string) {
+  this.elements.day().select(dayValue).should('contain', dayValue);
+}
+  
+enterMonth(monthValue: string) {
+  this.elements.month().select(monthValue).should('have.value', monthValue);
+}
+enterYear(yearValue: string) {
+  this.elements.year().select(yearValue).should('have.value', yearValue);
+}
+
+  enterDateOfBirth(day: string, monthValue: string, year: string) {
+  this.elements.day().select(day);
+  this.elements.month().select(monthValue);
+  this.elements.year().select(year);
+}
   enterCompany(company: string) {
-    this.elements.password().clear().type(company);
+    this.elements.company().clear().type(company);
   }
   enterFirstName(firstName: string) {
     this.elements.firstName().clear().type(firstName);
