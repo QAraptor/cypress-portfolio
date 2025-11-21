@@ -14,6 +14,7 @@ declare global {
     interface Chainable {
       startSignup(user: { name: string; email: string }): Chainable<void>;
       navigateSignup(): Chainable<void>;
+      registerUser(entityKey: string): Chainable<void>;
     }
   }
 }

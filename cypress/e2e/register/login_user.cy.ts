@@ -20,7 +20,9 @@ describe('Login', () => {
     cp.accountInfoPage.enterFullName(fx.users.entity_02.fullName)
     cp.accountInfoPage.enterTitle()
     cp.accountInfoPage.createPassword(fx.users.entity_02.password)
-    cp.accountInfoPage.enterDateOfBirth()
+    cp.accountInfoPage.enterDay(fx.users.entity_02.day) 
+    cp.accountInfoPage.enterMonth(fx.users.entity_02.month)
+    cp.accountInfoPage.enterYear(fx.users.entity_02.year)
     cp.accountInfoPage.receiveSpecialOffer()
     cp.accountInfoPage.signUpNewsletter()
     cp.accountInfoPage.enterFirstName(fx.users.entity_02.firstName)
@@ -35,12 +37,11 @@ describe('Login', () => {
     cp.accountInfoPage.enterMobile(fx.users.entity_02.mobile)
     cp.accountInfoPage.createAccount()
     cp.accountInfoPage.verifyAccount()
-    /*
     cp.accountInfoPage.clickContinueBtn()
     cp.homePage.deleteAccount()
     cp.accountInfoPage.verifyAccountDeleted()
     cp.accountInfoPage.clickContinueBtn()
-    */
+    
     
   });
 
@@ -56,7 +57,7 @@ describe('Login', () => {
 
  });
 
-   it.only('Test Case 5: Register User with existing email', () => {
+   it('Test Case 5: Register User with existing email', () => {
     cp.homePage.verifyHomeTitle()
     cp.homePage.goToSignup()
     cp.loginPage.verifySignup()
