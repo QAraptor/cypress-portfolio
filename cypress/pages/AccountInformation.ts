@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 export class AccountInformationPage {
   elements = {
     accountInformationHeader: () => cy.get('h2.title.text-center'),

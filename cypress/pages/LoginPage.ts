@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 export class LoginPage {
   elements = {
    loginEmail: () => cy.get("input[data-qa='login-email']"),

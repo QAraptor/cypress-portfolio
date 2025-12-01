@@ -1,9 +1,13 @@
+/// <reference types="cypress" />
 export class HomePage {
   elements = {
     loginLink: () => cy.get("a[href='/login']"),
     deleteAccountBtn: () => cy.get("a[href='/delete_account']"),
-        userStatus: () => cy.get(".shop-menu .nav.navbar-nav li a:has(i.fa-user)")   // <--- target correct anchor
-  };
+    userStatus: () => cy.get(".shop-menu .nav.navbar-nav li a:has(i.fa-user)"),
+    productsBtn: () => cy.get("a[href='/products']")   // <--- target correct anchor
+
+
+  }; 
 
   verifyHomeTitle() {
     cy.title().should('eq', 'Automation Exercise');
@@ -21,6 +25,10 @@ export class HomePage {
       .find('b')
       .should('have.text', username);
   }
+  goToProductPage() {
+    this.elements.productsBtn().click();
+  }
+
   }
 
 export const homePage = new HomePage();
