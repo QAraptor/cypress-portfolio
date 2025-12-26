@@ -16,12 +16,22 @@ describe('Login', () => {
     cp.productPage.verifyDefaultFilters();
   });
 
-
-  it('Test Case 12: Add Products in Cart', () =>{
-
-
-    
-  }
+  it.only('Test Case 12: Add Products in Cart', () => {
+    cp.homePage.verifyHomeTitle();
+    cp.homePage.goToProductPage();
+    cp.productPage.clickFirstAddToCart();
+    cp.cartPage.clickContinueShoppingBtn();
+    cp.productPage.clickAddToCartByProductId('2');
+    cp.productPage.clickViewCart();
+    cp.cartPage.verifyProductExists(1);
+    cp.cartPage.verifyProductExists(2);
+    cp.cartPage.verifyProductPrice(1, '500');
+    cp.cartPage.verifyProductQuantity(1, '1');
+    cp.cartPage.verifyProductTotal(1, '500');
+    cp.cartPage.verifyProductPrice(2, '400');
+    cp.cartPage.verifyProductQuantity(2, '1');
+    cp.cartPage.verifyProductTotal(2, '400');
+  });
 
   /*
 1. Launch browser

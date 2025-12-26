@@ -2,7 +2,10 @@
 interface ProductsPageElements {
   titleTextHeader: () => Cypress.Chainable<JQuery<HTMLElement>>;
   productList: () => Cypress.Chainable<JQuery<HTMLElement>>;
-  viewButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
+
+  addToCartButtons: () => Cypress.Chainable<JQuery<HTMLElement>>;
+  viewCartButton: () => Cypress.Chainable<JQuery<HTMLElement>>;
+  productLinks: () => Cypress.Chainable<JQuery<HTMLElement>>;
 }
 
 export class ProductsPage {
@@ -12,7 +15,9 @@ export class ProductsPage {
   elements: ProductsPageElements = {
     titleTextHeader: () => cy.get('.title-text-center'),
     productList: () => cy.get('.product-image-wrapper'),
-    viewButton: () => cy.get("a[href='/product_details/1']"),
+    addToCartButtons: () => cy.get('a.add-to-cart'),
+    viewCartButton: () => cy.get('#cartModal a[href="/view_cart"]'),
+    productLinks: () => cy.get('a[href^="/product_details"]'),
   };
 
   verifyPageTitle() {
@@ -34,15 +39,29 @@ export class ProductsPage {
     });
   }
 
-  clickViewButton() {
-    this.elements.viewButton().click();
-  }
   viewProductLinks() {
-    return cy.get('a[href^="/product_details"]');
+    return this.elements.productLinks();
   }
 
   clickFirstProduct() {
     this.viewProductLinks().first().click();
+  }
+  clickFirstAddToCart(): void {
+    this.elements.addToCartButtons().first().should('be.visible').click();
+  }
+  clickViewCart(): void {
+    this.elements.viewCartButton().should('be.visible').click();
+  }
+  /*
+  clickAddToCartByProductId(id: string): void {
+    cy.get(`a.add-to-cart[data-product-id="${id}"]`).should('be.visible').click();
+  }
+    */
+  clickAddToCartByProductId(id: string): void {
+    cy.get(`a.add-to-cart[data-product-id="${id}"]`)
+      .filter(':visible')
+      .should('have.length', 1)
+      .click();
   }
 }
 
