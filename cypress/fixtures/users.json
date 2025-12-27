@@ -5,9 +5,9 @@
     "password": "Password123!",
     "firstName": "Avery",
     "lastName": "Coleman",
-    "day":      "12",
-    "month":     "3",
-    "year":      "1995",
+    "day": "12",
+    "month": "3",
+    "year": "1995",
     "company": "BlueSky Labs",
     "address": "101 River Street",
     "address2": "Suite 12B",
@@ -24,9 +24,9 @@
     "email": "testuser002_wave@gmail.com",
     "password": "Password123!",
     "firstName": "Liam",
-    "day":      "12",
-    "month":     "3",
-    "year":      "1995",
+    "day": "12",
+    "month": "3",
+    "year": "1995",
     "lastName": "Hartman",
     "company": "Evergreen Corp",
     "address": "452 Oak Avenue",
@@ -44,6 +44,9 @@
     "email": "testuser003_coast@gmail.com",
     "password": "Password123!",
     "firstName": "Sofia",
+    "day": "11",
+    "month": "4",
+    "year": "1996",
     "lastName": "Park",
     "company": "Clearline Analytics",
     "address": "891 Harbor Lane",
@@ -53,7 +56,7 @@
     "city": "Toronto",
     "zipcode": "M5B 2H1",
     "mobile": "647-392-1584",
-    "username": "TestUser_003testuser003"
+    "username": "TestUser_003"
   },
 
   "entity_04": {
@@ -61,6 +64,9 @@
     "email": "testuser004_river@gmail.com",
     "password": "Password123!",
     "firstName": "Marcus",
+    "day": "10",
+    "month": "11",
+    "year": "2000",
     "lastName": "King",
     "company": "NorthStar Digital",
     "address": "321 Elm Parkway",
@@ -70,7 +76,7 @@
     "city": "Denver",
     "zipcode": "80201",
     "mobile": "720-550-3981",
-    "username": "marcusking004"
+    "username": "TestUser_004"
   },
 
   "entity_05": {
@@ -78,6 +84,9 @@
     "email": "testuser005_delta@gmail.com",
     "password": "Password123!",
     "firstName": "Emily",
+    "day": "2",
+    "month": "8",
+    "year": "2003",
     "lastName": "Graves",
     "company": "Atlas Innovations",
     "address": "77 Beacon Drive",
@@ -87,7 +96,7 @@
     "city": "Savannah",
     "zipcode": "31401",
     "mobile": "912-788-5504",
-    "username": "emilygraves005"
+    "username": "TestUser_005"
   },
 
   "entity_06": {

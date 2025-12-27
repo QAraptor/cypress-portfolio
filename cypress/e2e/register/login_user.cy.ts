@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+import { registerAndDeleteUser, registerNewUser, signInAndDeleteUser } from '../../utils/userFlows';
 
 //import { fx } from "cypress/fixtures";
 
@@ -26,5 +27,10 @@ describe('Login', () => {
     cp.loginPage.enterSignupEmail(fx.users.entity_02.email);
     cp.loginPage.submitSignup();
     cp.loginPage.verifyEmailExistsMessage();
+  });
+
+  it('Test Case 5: Sign in with existing user and delete account', () => {
+    signInAndDeleteUser(fx.users.entity_05);
+    signInAndDeleteUser(fx.users.entity_02);
   });
 });

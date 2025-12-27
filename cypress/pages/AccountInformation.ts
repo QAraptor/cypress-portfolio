@@ -7,7 +7,7 @@ export class AccountInformationPage {
     password: () => cy.get('#password'),
     firstName: () => cy.get('#first_name'),
     lastName: () => cy.get('#last_name'),
-    day:  () => cy.get('#days'),
+    day: () => cy.get('#days'),
     month: () => cy.get('select[data-qa="months"]'),
     year: () => cy.get('select[data-qa="years"]'),
     newsletterCheckbox: () => cy.get('#newsletter'),
@@ -21,9 +21,9 @@ export class AccountInformationPage {
     zipcode: () => cy.get('#zipcode'),
     mobileNumber: () => cy.get('#mobile_number'),
     createAccountBtn: () => cy.get("button[data-qa='create-account']"),
-    accountCreatedHeader: () => cy.get("h2.title.text-center"),
-    continueBtn: () => cy.get(".btn.btn-primary"),
-    accountDeletedHeader: () => cy.get(".title.text-center"),
+    accountCreatedHeader: () => cy.get('h2.title.text-center'),
+    continueBtn: () => cy.get('.btn.btn-primary'),
+    accountDeletedHeader: () => cy.get('.title.text-center'),
   };
   verifyAccountInfoHeader() {
     this.elements.accountInformationHeader().should('be.visible');
@@ -48,21 +48,21 @@ export class AccountInformationPage {
   }
 
   enterDay(dayValue: string) {
-  this.elements.day().select(dayValue).should('contain', dayValue);
-}
-  
-enterMonth(monthValue: string) {
-  this.elements.month().select(monthValue).should('have.value', monthValue);
-}
-enterYear(yearValue: string) {
-  this.elements.year().select(yearValue).should('have.value', yearValue);
-}
+    this.elements.day().select(dayValue).should('contain', dayValue);
+  }
+
+  enterMonth(monthValue: string) {
+    this.elements.month().select(monthValue).should('have.value', monthValue);
+  }
+  enterYear(yearValue: string) {
+    this.elements.year().select(yearValue).should('have.value', yearValue);
+  }
 
   enterDateOfBirth(day: string, monthValue: string, year: string) {
-  this.elements.day().select(day);
-  this.elements.month().select(monthValue);
-  this.elements.year().select(year);
-}
+    this.elements.day().select(day);
+    this.elements.month().select(monthValue);
+    this.elements.year().select(year);
+  }
   enterCompany(company: string) {
     this.elements.company().clear().type(company);
   }
@@ -81,10 +81,8 @@ enterYear(yearValue: string) {
   }
 
   enterCountry(country: string) {
-     this.elements.country()
-    .should('be.visible')
-    .select(country);             
-  this.elements.country().should('have.value', country);
+    this.elements.country().should('be.visible').select(country);
+    this.elements.country().should('have.value', country);
   }
   enterState(state: string) {
     this.elements.state().clear().type(state).type('{Enter}');
@@ -107,6 +105,9 @@ enterYear(yearValue: string) {
   verifyAccount() {
     this.elements.accountCreatedHeader().should('have.text', 'Account Created!');
   }
+  verifyAccountDoesNotExist() {
+    this.elements.accountCreatedHeader().should('not.have.text', 'Account Created!');
+  }
   clickContinueBtn() {
     this.elements.continueBtn().click();
   }
@@ -115,4 +116,4 @@ enterYear(yearValue: string) {
   }
 }
 
-export const accountInfoPage = new AccountInformationPage(); 
+export const accountInfoPage = new AccountInformationPage();

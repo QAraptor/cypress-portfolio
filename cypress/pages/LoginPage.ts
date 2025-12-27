@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 export class LoginPage {
   elements = {
-   loginEmail: () => cy.get("input[data-qa='login-email']"),
+    loginEmail: () => cy.get("input[data-qa='login-email']"),
     password: () => cy.get("input[placeholder='Password']"),
     loginBtn: () => cy.get("button[data-qa='login-button']"),
     signupName: () => cy.get("input[placeholder='Name']"),
@@ -9,13 +9,14 @@ export class LoginPage {
     signupBtn: () => cy.get("button[data-qa='signup-button']"),
     signupHeader: () => cy.get('div.signup-form h2'),
     loginHeader: () => cy.get("div[class='login-form'] h2"),
-    emailExistsMsg: () =>  cy.contains('p', 'Email Address already exist!')
+    emailExistsMsg: () => cy.contains('p', 'Email Address already exist!'),
+    signupErrorMsg: () => cy.get("'input[name='email']'"),
   };
-  
+
   openHome() {
     cy.visit('http://automationexercise.com');
   }
-  
+
   verifySignup() {
     this.elements.signupHeader().should('have.text', 'New User Signup!');
   }
@@ -28,25 +29,32 @@ export class LoginPage {
   submitSignup() {
     this.elements.signupBtn().click();
   }
-   
+
   verifyLoginHeader() {
     this.elements.loginHeader().should('be.visible');
   }
 
-   enterLoginEmail(email: string) {
+  enterLoginEmail(email: string) {
     this.elements.loginEmail().clear().type(email);
   }
   enterPassword(password: string) {
     this.elements.password().clear().type(password);
   }
-  clickLogin(){
+  clickLogin() {
     this.elements.loginBtn().click();
   }
   verifyEmailExistsMessage() {
-  this.elements.emailExistsMsg().should('be.visible');
-}
+    this.elements.emailExistsMsg().should('be.visible');
+  }
+  emailInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+    return cy.get('input[name="email"]') as Cypress.Chainable<JQuery<HTMLInputElement>>;
+  }
 
-
-
+  verifySignupError(inputGetter: () => Cypress.Chainable<JQuery<HTMLInputElement>>) {
+    inputGetter().then(($el) => {
+      const input = $el[0] as HTMLInputElement;
+      expect(input.checkValidity()).to.be.false;
+    });
+  }
 }
 export const loginPage = new LoginPage();
