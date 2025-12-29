@@ -10,5 +10,14 @@ export default defineConfig({
     retries: { runMode: 2, openMode: 0 },
     video: true,
     screenshotOnRunFailure: true,
+    screenshotsFolder: 'cypress/screenshots',
+    videosFolder: 'cypress/videos',
+    reporter: 'mochawesome',
+    reporterOptions: {
+      reportDir: 'cypress/reports',
+      overwrite: false,
+      html: false,
+      json: true,
+    },
   },
 });

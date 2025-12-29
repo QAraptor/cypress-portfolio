@@ -6,7 +6,10 @@
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
     "test": "npx cypress run",
-    "format": "prettier --write ."
+    "cy:run:login": "cypress run --spec \"cypress/e2e/register/login_user.cy.ts\"",
+    "format": "prettier --write .",
+    "report:merge": "mochawesome-merge cypress/reports/mochawesome_*.json > cypress/reports/report.json",
+    "report:generate": "marge cypress/reports/report.json --reportDir cypress/reports --inline"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,9 @@
     "eslint-plugin-cypress": "^5.2.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.4",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.0",
+    "mochawesome-report-generator": "^6.3.2",
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"

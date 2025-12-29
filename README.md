@@ -1,12 +1,14 @@
 # cypress-portfolio
 
-# Cypress Portfolio Automation Framework  
+# Cypress Portfolio Automation Framework
+
 > UI + POM Architecture + Global Page Access + Fixtures + Custom Commands  
 > Built to mirror real enterprise QA automation standards.
 
 ## 🚀 Overview
 
 This project is a **scalable Cypress + TypeScript UI test automation framework**, designed to demonstrate:
+
 - Clean Page Object Model (POM) structure
 - Global page abstraction (`cp`) for human-readable tests
 - Data-driven testing using Fixtures (`fx`)
@@ -40,16 +42,14 @@ cypress/
 ├── e2e.ts # Runtime setup (defines globals)
 └── globals.d.ts # Type definitions for globals
 
-
-
 ---
 
 ## 🌍 Global Architecture
 
-| Global Name | Purpose | Example Usage |
-|------------|---------|---------------|
-| `cp` | Central object containing **all Page Objects** | `cp.loginPage.submitLogin()` |
-| `fx` | Central object containing **all fixture data** | `fx.users.valid.email` |
+| Global Name | Purpose                                        | Example Usage                |
+| ----------- | ---------------------------------------------- | ---------------------------- |
+| `cp`        | Central object containing **all Page Objects** | `cp.loginPage.submitLogin()` |
+| `fx`        | Central object containing **all fixture data** | `fx.users.valid.email`       |
 
 ✅ Eliminates repeated imports  
 ✅ Gives clean, readable tests  
@@ -152,6 +152,9 @@ bash
 Copy code
 npx cypress run
 
+Reporting
+HTML test reports are generated using Mochawesome with inlined assets for easy local viewing.
+
 
 💼 Hiring Manager Notes
 This repository demonstrates:
@@ -177,3 +180,4 @@ Hiring managers
 
 My goal: Demonstrate clear thinking, clean structure, and maintainable automation design.
 
+```

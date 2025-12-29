@@ -119,4 +119,9 @@ describe('Login', () => {
     cp.accountInfoPage.createAccount();
     cp.accountInfoPage.verifyAccountDoesNotExist();
   });
+
+  it('should intentionally fail to verify screenshots and video', () => {
+    cy.visit('/');
+    cy.get('this-does-not-exist');
+  });
 });
