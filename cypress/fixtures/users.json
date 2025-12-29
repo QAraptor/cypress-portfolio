@@ -104,6 +104,9 @@
     "email": "testuser006_shadow@gmail.com",
     "password": "Password123!",
     "firstName": "Noah",
+    "day": "2",
+    "month": "8",
+    "year": "1950",
     "lastName": "Patel",
     "company": "Horizon Data Group",
     "address": "209 Willow Bend",
@@ -113,7 +116,7 @@
     "city": "Vancouver",
     "zipcode": "V5K 0A1",
     "mobile": "604-227-9310",
-    "username": "noahpatel006"
+    "username": "TestUser_006"
   },
 
   "entity_07": {
@@ -182,5 +185,24 @@
     "zipcode": "23219",
     "mobile": "804-399-7212",
     "username": "ethanbishop010"
+  },
+  "apiEntity_01": {
+    "name": "Test User API",
+    "email": "api_user_12345@test.com",
+    "password": "Password123!",
+    "title": "Mr",
+    "birth_date": "10",
+    "birth_month": "5",
+    "birth_year": "1990",
+    "firstname": "Test",
+    "lastname": "User",
+    "company": "Automation Inc",
+    "address1": "123 Test Street",
+    "address2": "Suite 100",
+    "country": "United States",
+    "zipcode": "12345",
+    "state": "VA",
+    "city": "Reston",
+    "mobile_number": "1234567890"
   }
 }
