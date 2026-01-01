@@ -5,7 +5,7 @@ import { registerAndDeleteUser, registerNewUser, signInAndDeleteUser } from '../
 
 describe('Login', () => {
   beforeEach(() => {
-    cy.visit('https://www.automationexercise.com');
+    cy.visit('/');
   });
 
   it('Test Case 3: Login User with correst email and password', () => {

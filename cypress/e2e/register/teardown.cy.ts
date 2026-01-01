@@ -5,7 +5,7 @@ import { registerAndDeleteUser, registerNewUser, signInAndDeleteUser } from '../
 
 describe('Teardown', () => {
   beforeEach(() => {
-    cy.visit('https://www.automationexercise.com');
+    cy.visit('/');
   });
 
   it(' Sign in with existing user and delete account', () => {
