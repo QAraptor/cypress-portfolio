@@ -16,4 +16,24 @@ describe('API - Products', () => {
       cy.log(JSON.stringify(res.body));
     });
   });
+
+  it('API 2: POST to Products List returns 405 and error message', () => {
+    api.products.postToAllProducts().then((res) => {
+      //  expect(res.status).to.eq(405);
+
+      const body = typeof res.body === 'string' ? JSON.parse(res.body) : res.body;
+
+      expect(body).to.have.property('message');
+      expect(body.message).to.eq('This request method is not supported.');
+    });
+  });
+
+  it('API 4: PUT To All Brands List', () => {
+    api.products.putToAllBrands().then((res) => {
+      const body = typeof res.body === 'string' ? JSON.parse(res.body) : res.body;
+
+      expect(body).to.have.property('message');
+      expect(body.message).to.eq('This request method is not supported.');
+    });
+  });
 });

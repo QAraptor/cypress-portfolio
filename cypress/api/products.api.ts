@@ -5,4 +5,19 @@ export const productsApi = {
       url: '/api/productsList',
     });
   },
+  postToAllProducts() {
+    return cy.request({
+      method: 'POST',
+      url: '/api/productsList',
+      failOnStatusCode: false,
+    });
+  },
+
+  putToAllBrands() {
+    return cy.request({
+      method: 'PUT',
+      url: '/api/brandsList',
+      failOnStatusCode: false,
+    });
+  },
 };
