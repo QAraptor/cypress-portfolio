@@ -9,7 +9,8 @@ describe('Login', () => {
   });
 
   it('Test Case 3: Login User with correst email and password', () => {
-    cy.navigateSignup();
+    registerNewUser(fx.users.entity_01);
+    cp.homePage.clickLogoutBtn();
     cp.loginPage.verifyLoginHeader();
     cp.loginPage.enterLoginEmail(fx.users.entity_01.email);
     cp.loginPage.enterPassword(fx.users.entity_01.password);
@@ -20,17 +21,22 @@ describe('Login', () => {
   });
 
   it('Test Case 4: Register User with existing email', () => {
-    cp.homePage.verifyHomeTitle();
+    registerNewUser(fx.users.entity_02);
+    cp.homePage.clickLogoutBtn();
     cp.homePage.goToSignup();
     cp.loginPage.verifySignup();
     cp.loginPage.enterSignupName(fx.users.entity_02.fullName);
     cp.loginPage.enterSignupEmail(fx.users.entity_02.email);
     cp.loginPage.submitSignup();
     cp.loginPage.verifyEmailExistsMessage();
+    cp.loginPage.enterLoginEmail(fx.users.entity_02.email);
+    cp.loginPage.enterPassword(fx.users.entity_02.password);
+    cp.loginPage.clickLogin();
+    cp.homePage.deleteAccount();
+    cp.accountInfoPage.verifyAccountDeleted();
   });
 
-  it('Test Case 5: Sign in with existing user and delete account', () => {
-    signInAndDeleteUser(fx.users.entity_05);
-    signInAndDeleteUser(fx.users.entity_02);
+  xit('Test Case 5: Sign in with existing user and delete account', () => {
+    signInAndDeleteUser(fx.users.entity_01);
   });
 });

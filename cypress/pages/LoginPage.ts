@@ -1,60 +1,61 @@
 /// <reference types="cypress" />
+
+import { testUtils, TestUtils } from 'cypress/utils/testUtils';
+
 export class LoginPage {
   elements = {
-    loginEmail: () => cy.get("input[data-qa='login-email']"),
-    password: () => cy.get("input[placeholder='Password']"),
-    loginBtn: () => cy.get("button[data-qa='login-button']"),
-    signupName: () => cy.get("input[placeholder='Name']"),
-    signupEmail: () => cy.get("input[data-qa='signup-email']"),
-    signupBtn: () => cy.get("button[data-qa='signup-button']"),
-    signupHeader: () => cy.get('div.signup-form h2'),
-    loginHeader: () => cy.get("div[class='login-form'] h2"),
-    emailExistsMsg: () => cy.contains('p', 'Email Address already exist!'),
-    signupErrorMsg: () => cy.get("'input[name='email']'"),
+    loginEmail: "input[data-qa='login-email']",
+    password: "input[placeholder='Password']",
+    loginBtn: "button[data-qa='login-button']",
+    signupName: "input[placeholder='Name']",
+    signupEmail: "input[data-qa='signup-email']",
+    signupBtn: "button[data-qa='signup-button']",
+    signupHeader: 'div.signup-form h2',
+    loginHeader: "div[class='login-form'] h2",
+    signupErrorInput: 'input[name="email"]',
   };
 
   openHome() {
     cy.visit('http://automationexercise.com');
   }
 
-  verifySignup() {
-    this.elements.signupHeader().should('have.text', 'New User Signup!');
+  verifySignup(): void {
+    testUtils.verifyText(this.elements.signupHeader, 'New User Signup!');
   }
-  enterSignupName(name: string) {
-    this.elements.signupName().clear().type(name);
+  enterSignupName(name: string): void {
+    testUtils.enterText(this.elements.signupName, name);
   }
-  enterSignupEmail(email: string) {
-    this.elements.signupEmail().clear().type(email);
+  enterSignupEmail(email: string): void {
+    testUtils.enterText(this.elements.signupEmail, email);
   }
-  submitSignup() {
-    this.elements.signupBtn().click();
-  }
-
-  verifyLoginHeader() {
-    this.elements.loginHeader().should('be.visible');
+  submitSignup(): void {
+    testUtils.clickElement(this.elements.signupBtn);
   }
 
-  enterLoginEmail(email: string) {
-    this.elements.loginEmail().clear().type(email);
+  verifyLoginHeader(): void {
+    testUtils.verifyElementVisible(this.elements.loginHeader);
   }
-  enterPassword(password: string) {
-    this.elements.password().clear().type(password);
+
+  enterLoginEmail(email: string): void {
+    testUtils.enterText(this.elements.loginEmail, email);
   }
+  enterPassword(password: string): void {
+    testUtils.enterText(this.elements.password, password);
+  }
+  /*
   clickLogin() {
     this.elements.loginBtn().click();
   }
-  verifyEmailExistsMessage() {
-    this.elements.emailExistsMsg().should('be.visible');
+    */
+  clickLogin(): void {
+    testUtils.clickElement(this.elements.loginBtn);
   }
-  emailInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
-    return cy.get('input[name="email"]') as Cypress.Chainable<JQuery<HTMLInputElement>>;
+  verifyEmailExistsMessage(): void {
+    testUtils.verifyContainsText('Email Address already exist!');
   }
 
-  verifySignupError(inputGetter: () => Cypress.Chainable<JQuery<HTMLInputElement>>) {
-    inputGetter().then(($el) => {
-      const input = $el[0] as HTMLInputElement;
-      expect(input.checkValidity()).to.be.false;
-    });
+  verifySignupError(): void {
+    testUtils.verifyInputInvalid(this.elements.signupErrorInput);
   }
 }
 export const loginPage = new LoginPage();

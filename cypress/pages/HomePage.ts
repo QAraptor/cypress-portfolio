@@ -3,11 +3,10 @@ export class HomePage {
   elements = {
     loginLink: () => cy.get("a[href='/login']"),
     deleteAccountBtn: () => cy.get("a[href='/delete_account']"),
-    userStatus: () => cy.get(".shop-menu .nav.navbar-nav li a:has(i.fa-user)"),
-    productsBtn: () => cy.get("a[href='/products']")   // <--- target correct anchor
-
-
-  }; 
+    userStatus: () => cy.get('.shop-menu .nav.navbar-nav li a:has(i.fa-user)'),
+    productsBtn: () => cy.get("a[href='/products']"), // <--- target correct anchor
+    logoutBtn: () => cy.get('.shop-menu > .nav > :nth-child(4) > a'),
+  };
 
   verifyHomeTitle() {
     cy.title().should('eq', 'Automation Exercise');
@@ -16,11 +15,12 @@ export class HomePage {
   goToSignup() {
     this.elements.loginLink().click();
   }
-  deleteAccount(){
-    this.elements.deleteAccountBtn().click()
+  deleteAccount() {
+    this.elements.deleteAccountBtn().click();
   }
   verifyLoggedInAs(username: string) {
-    this.elements.userStatus()
+    this.elements
+      .userStatus()
       .should('contain.text', 'Logged in as')
       .find('b')
       .should('have.text', username);
@@ -28,7 +28,9 @@ export class HomePage {
   goToProductPage() {
     this.elements.productsBtn().click();
   }
-
+  clickLogoutBtn() {
+    this.elements.logoutBtn().click();
   }
+}
 
 export const homePage = new HomePage();

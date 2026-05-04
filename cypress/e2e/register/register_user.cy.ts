@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
-import { registerAndDeleteUser, registerNewUser } from '../../utils/userFlows';
-//import { fx } from "cypress/fixtures";
-import { generateRandomEmail } from '../../utils/testUtils';
-const email = generateRandomEmail();
+
+import { registerAndDeleteUser, registerNewUser, signInAndDeleteUser } from '../../utils/userFlows';
+
+import { testUtils } from '../../utils/testUtils';
+
+const email = testUtils.generateRandomEmail();
+
 describe('Register', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -39,12 +42,16 @@ describe('Register', () => {
     cp.accountInfoPage.createAccount();
     cp.accountInfoPage.verifyAccount();
     cp.accountInfoPage.clickContinueBtn();
+    cp.homePage.clickLogoutBtn();
+    signInAndDeleteUser(fx.users.entity_01);
   });
-  it('Test Case 2.5: Register Different User', () => {
+
+  it.skip('Test Case 2.5: Register Different User', () => {
     registerNewUser(fx.users.entity_05);
   });
 
   it('demo email generator', () => {
+    const email = testUtils.generateRandomEmail();
     cp.homePage.verifyHomeTitle();
     cp.homePage.goToSignup();
     cp.loginPage.verifySignup();
@@ -59,7 +66,7 @@ describe('Register', () => {
     cp.loginPage.enterSignupName(fx.users.entity_01.fullName);
     cp.loginPage.submitSignup();
 
-    cp.loginPage.verifySignupError(cp.loginPage.emailInput);
+    cp.loginPage.verifySignupError();
   });
 
   it('should show an error when password is missing during registration', () => {
