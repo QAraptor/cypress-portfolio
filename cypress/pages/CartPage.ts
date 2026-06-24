@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
 
+import { testUtils, TestUtils } from 'cypress/utils/testUtils';
 interface CartPageElements {
   productRow: (productId: number) => Cypress.Chainable<JQuery<HTMLElement>>;
   productPrice: (productId: number) => Cypress.Chainable<JQuery<HTMLElement>>;
-  productQuantity: (productId: number) => Cypress.Chainable<JQuery<HTMLInputElement>>;
+  productQuantity: (productId: number) => Cypress.Chainable<JQuery<HTMLElement>>;
   productTotal: (productId: number) => Cypress.Chainable<JQuery<HTMLElement>>;
-
   continueShoppingBtn: () => Cypress.Chainable<JQuery<HTMLElement>>;
 }
 
@@ -18,27 +18,24 @@ export class CartPage {
     continueShoppingBtn: () => cy.get('.btn.btn-success.close-modal.btn-block'),
   };
 
-  /* ============================
-     ASSERTIONS
-     ============================ */
-
   verifyProductExists(productId: number): void {
-    this.elements.productRow(productId).should('exist').and('be.visible');
+    testUtils.verifyExistsAndVisible(this.elements.productRow(productId));
   }
 
   verifyProductPrice(productId: number, expectedPrice: string): void {
-    this.elements.productPrice(productId).should('be.visible').and('contain.text', expectedPrice);
+    testUtils.verifyContainsTextChainable(this.elements.productPrice(productId), expectedPrice);
   }
 
   verifyProductQuantity(productId: number, expectedQt: string): void {
-    this.elements.productQuantity(productId).should('be.visible').and('contain.text', expectedQt);
+    testUtils.verifyContainsTextChainable(this.elements.productQuantity(productId), expectedQt);
   }
 
   verifyProductTotal(productId: number, expectedTotal: string): void {
-    this.elements.productTotal(productId).should('be.visible').and('contain.text', expectedTotal);
+    testUtils.verifyContainsTextChainable(this.elements.productTotal(productId), expectedTotal);
   }
+
   clickContinueShoppingBtn(): void {
-    this.elements.continueShoppingBtn().should('be.visible').click();
+    testUtils.clickChainable(this.elements.continueShoppingBtn());
   }
 }
 

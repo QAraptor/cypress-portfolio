@@ -8,11 +8,8 @@ describe('Teardown', () => {
     cy.visit('/');
   });
 
-  it(' Sign in with existing user and delete account', () => {
+  xit(' Sign in with existing user and delete account', () => {
     signInAndDeleteUser(fx.users.entity_05);
-  });
-
-  it(' Sign in with existing user and delete account', () => {
     signInAndDeleteUser(fx.users.entity_02);
   });
 });

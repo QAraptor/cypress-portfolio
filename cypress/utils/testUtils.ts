@@ -34,6 +34,43 @@ export class TestUtils {
       expect(input.checkValidity()).to.be.false;
     });
   }
+  checkElement(locator: string): void {
+    cy.get(locator, { timeout: 10000 }).check();
+  }
+
+  selectDropdown(locator: string, value: string): void {
+    cy.get(locator, { timeout: 10000 }).select(value);
+  }
+
+  selectDropdownAndVerifyValue(locator: string, value: string): void {
+    cy.get(locator, { timeout: 10000 }).select(value).should('have.value', value);
+  }
+
+  selectDropdownAndVerifyContains(locator: string, value: string): void {
+    cy.get(locator, { timeout: 10000 }).select(value).should('contain', value);
+  }
+
+  verifyTextNotEqual(locator: string, text: string): void {
+    cy.get(locator, { timeout: 10000 }).should('not.have.text', text);
+  }
+  verifyVisible(element: Cypress.Chainable<JQuery<HTMLElement>>): void {
+    element.should('be.visible');
+  }
+
+  verifyExistsAndVisible(element: Cypress.Chainable<JQuery<HTMLElement>>): void {
+    element.should('exist').and('be.visible');
+  }
+
+  verifyContainsTextChainable(
+    element: Cypress.Chainable<JQuery<HTMLElement | HTMLInputElement>>,
+    text: string
+  ): void {
+    element.should('be.visible').and('contain.text', text);
+  }
+
+  clickChainable(element: Cypress.Chainable<JQuery<HTMLElement>>): void {
+    element.should('be.visible').click();
+  }
 }
 
 export const testUtils = new TestUtils();

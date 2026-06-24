@@ -72,7 +72,7 @@ export const registerNewUser = (users: UserFixture) => {
 };
 
 export const signInAndDeleteUser = (users: UserFixture) => {
-  //  cy.navigateSignup();
+  cy.navigateSignup();
   cp.loginPage.verifyLoginHeader();
   cp.loginPage.enterLoginEmail(users.email);
   cp.loginPage.enterPassword(users.password);

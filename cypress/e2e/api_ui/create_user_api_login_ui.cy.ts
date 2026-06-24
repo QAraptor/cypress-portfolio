@@ -2,8 +2,10 @@
 
 import { usersApi } from '../../api/users.api';
 
-import { generateRandomEmail, parseApiBody } from '../../utils/testUtils';
-const email = generateRandomEmail();
+//import { generateRandomEmail, parseApiBody } from '../../utils/testUtils';
+import { testUtils, TestUtils } from 'cypress/utils/testUtils';
+//const email = generateRandomEmail();
+const email = testUtils.generateRandomEmail();
 
 describe('API → UI User Flow', () => {
   beforeEach(() => {
@@ -52,7 +54,7 @@ describe('API → UI User Flow', () => {
         .then((deleteRes) => {
           expect(deleteRes.status).to.eq(200);
 
-          const body = parseApiBody(deleteRes.body);
+          const body = testUtils.parseApiBody(deleteRes.body);
           expect(body.message).to.eq('Account deleted!');
         });
     });
