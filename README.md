@@ -63,16 +63,16 @@ cypress/
 // cypress/pages/HomePage.ts
 export class HomePage {
   elements = {
-    signupLink: () => cy.get("a[href='/login']"),
-  };
-
-  verifyHomeTitle() {
-    cy.title().should('eq', 'Automation Exercise');
+    loginEmail: "input[data-qa='login-email']",
+    password: "input[placeholder='Password']",
+}
+ enterSignupName(name: string): void {
+    testUtils.enterText(this.elements.signupName, name);
   }
+  enterSignupEmail(email: string): void {
+    testUtils.enterText(this.elements.signupEmail, email);
 
-  goToSignup() {
-    this.elements.signupLink().click();
-  }
+}
 }
 export const homePage = new HomePage();
 Page Object Barrel (Global Access)
@@ -138,9 +138,7 @@ describe('Register User', () => {
     cp.loginPage.submitSignup();
   });
 });
-No imports.
-No repeated selectors.
-Just the business flow. ✅
+
 
 🏃 Running Tests
 Open Cypress UI
@@ -155,6 +153,9 @@ npx cypress run
 Reporting
 HTML test reports are generated using Mochawesome with inlined assets for easy local viewing.
 
+npm run report:generate
+npm run report:merge
+npm run test:report
 
 💼 Hiring Manager Notes
 This repository demonstrates:
@@ -167,7 +168,7 @@ Professional test readability
 
 Enterprise tooling readiness
 
-This is production-grade automation, not tutorial code.
+This project is designed to reflect real-world QA automation practices, including reusable page objects, fixture-driven test data, API validation, and reporting.
 
 ⭐ If Reviewing This Repo
 I welcome feedback from:

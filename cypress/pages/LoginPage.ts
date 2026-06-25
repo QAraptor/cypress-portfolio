@@ -42,11 +42,7 @@ export class LoginPage {
   enterPassword(password: string): void {
     testUtils.enterText(this.elements.password, password);
   }
-  /*
-  clickLogin() {
-    this.elements.loginBtn().click();
-  }
-    */
+
   clickLogin(): void {
     testUtils.clickElement(this.elements.loginBtn);
   }

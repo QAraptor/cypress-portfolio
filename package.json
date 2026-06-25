@@ -9,7 +9,8 @@
     "cy:run:login": "cypress run --spec \"cypress/e2e/register/login_user.cy.ts\"",
     "format": "prettier --write .",
     "report:merge": "mochawesome-merge cypress/reports/mochawesome_*.json > cypress/reports/report.json",
-    "report:generate": "marge cypress/reports/report.json --reportDir cypress/reports --inline"
+    "report:generate": "marge cypress/reports/report.json --reportDir cypress/reports --inline",
+    "test:report": "npm run cy:run && npm run report:merge && npm run report:generate"
   },
   "keywords": [],
   "author": "",

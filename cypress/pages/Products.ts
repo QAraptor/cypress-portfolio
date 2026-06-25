@@ -52,11 +52,7 @@ export class ProductsPage {
   clickViewCart(): void {
     this.elements.viewCartButton().should('be.visible').click();
   }
-  /*
-  clickAddToCartByProductId(id: string): void {
-    cy.get(`a.add-to-cart[data-product-id="${id}"]`).should('be.visible').click();
-  }
-    */
+
   clickAddToCartByProductId(id: string): void {
     cy.get(`a.add-to-cart[data-product-id="${id}"]`)
       .filter(':visible')

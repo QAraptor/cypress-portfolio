@@ -61,7 +61,7 @@ describe('Create Account API', () => {
     });
   });
 
-  it.only('deletes existing users via API', () => {
+  it('deletes existing users via API', () => {
     const usersToDelete = [
       fx.users.apiEntity_01,
       fx.users.apiEntity_03,

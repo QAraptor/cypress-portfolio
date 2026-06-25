@@ -8,7 +8,7 @@ describe('Login', () => {
     cy.visit('/');
   });
 
-  it('Test Case 3: Login User with correst email and password', () => {
+  it('Test Case 3: Login User with correct email and password', () => {
     registerNewUser(fx.users.entity_01);
     cp.homePage.clickLogoutBtn();
     cp.loginPage.verifyLoginHeader();

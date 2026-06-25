@@ -15,41 +15,6 @@ describe('Register', () => {
     registerAndDeleteUser(fx.users.entity_04);
   });
 
-  xit('Test Case 2: Register User', () => {
-    cy.navigateSignup();
-    cp.loginPage.enterSignupName(fx.users.entity_01.fullName);
-    cp.loginPage.enterSignupEmail(fx.users.entity_01.email);
-    cp.loginPage.submitSignup();
-    cp.accountInfoPage.verifyAccountInfoHeader();
-    cp.accountInfoPage.enterFullName(fx.users.entity_01.fullName);
-    cp.accountInfoPage.enterTitle();
-    cp.accountInfoPage.createPassword(fx.users.entity_01.password);
-    cp.accountInfoPage.enterDay(fx.users.entity_01.day);
-    cp.accountInfoPage.enterMonth(fx.users.entity_01.month);
-    cp.accountInfoPage.enterYear(fx.users.entity_01.year);
-    cp.accountInfoPage.receiveSpecialOffer();
-    cp.accountInfoPage.signUpNewsletter();
-    cp.accountInfoPage.enterFirstName(fx.users.entity_01.firstName);
-    cp.accountInfoPage.enterLastName(fx.users.entity_01.lastName);
-    cp.accountInfoPage.enterCompany(fx.users.entity_01.company);
-    cp.accountInfoPage.enterAddress(fx.users.entity_01.address);
-    cp.accountInfoPage.enterAddress2(fx.users.entity_01.address2);
-    cp.accountInfoPage.enterCountry(fx.users.entity_01.country);
-    cp.accountInfoPage.enterState(fx.users.entity_01.state);
-    cp.accountInfoPage.enterCity(fx.users.entity_01.city);
-    cp.accountInfoPage.enterZipcode(fx.users.entity_01.zipcode);
-    cp.accountInfoPage.enterMobile(fx.users.entity_01.mobile);
-    cp.accountInfoPage.createAccount();
-    cp.accountInfoPage.verifyAccount();
-    cp.accountInfoPage.clickContinueBtn();
-    cp.homePage.clickLogoutBtn();
-    signInAndDeleteUser(fx.users.entity_01);
-  });
-
-  xit('Test Case 2.5: Register Different User', () => {
-    registerNewUser(fx.users.entity_05);
-  });
-
   it('demo email generator', () => {
     const email = testUtils.generateRandomEmail();
     cp.homePage.verifyHomeTitle();
@@ -95,10 +60,5 @@ describe('Register', () => {
     cp.accountInfoPage.enterMobile(fx.users.entity_03.mobile);
     cp.accountInfoPage.createAccount();
     cp.accountInfoPage.verifyAccountDoesNotExist();
-  });
-
-  it('should intentionally fail to verify screenshots and video', () => {
-    cy.visit('/');
-    cy.get('this-does-not-exist');
   });
 });
