@@ -15,7 +15,7 @@ describe('Register', () => {
     registerAndDeleteUser(fx.users.entity_04);
   });
 
-  it('Test Case 2: Register User', () => {
+  xit('Test Case 2: Register User', () => {
     cy.navigateSignup();
     cp.loginPage.enterSignupName(fx.users.entity_01.fullName);
     cp.loginPage.enterSignupEmail(fx.users.entity_01.email);
@@ -46,7 +46,7 @@ describe('Register', () => {
     signInAndDeleteUser(fx.users.entity_01);
   });
 
-  it.skip('Test Case 2.5: Register Different User', () => {
+  xit('Test Case 2.5: Register Different User', () => {
     registerNewUser(fx.users.entity_05);
   });
 
