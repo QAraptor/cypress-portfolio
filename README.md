@@ -14,6 +14,7 @@ This project is a **scalable Cypress + TypeScript UI test automation framework**
 - Data-driven testing using Fixtures (`fx`)
 - Custom Cypress commands
 - Enterprise-ready architecture that is easy to extend & maintain
+- Utilizes GitHub Actions for CI
 
 This framework automates real user flows on:  
 **https://www.automationexercise.com**
@@ -156,6 +157,10 @@ HTML test reports are generated using Mochawesome with inlined assets for easy l
 npm run report:generate
 npm run report:merge
 npm run test:report
+
+## CI
+
+This project uses GitHub Actions to run the Cypress suite automatically on push.
 
 💼 Hiring Manager Notes
 This repository demonstrates:
