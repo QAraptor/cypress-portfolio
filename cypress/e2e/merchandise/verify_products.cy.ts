@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-//import { fx } from "cypress/fixtures";
-
 describe('Login', () => {
   beforeEach(() => {
     cy.visit('/');

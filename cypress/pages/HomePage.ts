@@ -4,7 +4,7 @@ export class HomePage {
     loginLink: () => cy.get("a[href='/login']"),
     deleteAccountBtn: () => cy.get("a[href='/delete_account']"),
     userStatus: () => cy.get('.shop-menu .nav.navbar-nav li a:has(i.fa-user)'),
-    productsBtn: () => cy.get("a[href='/products']"), // <--- target correct anchor
+    productsBtn: () => cy.get("a[href='/products']"),
     logoutBtn: () => cy.get('.shop-menu > .nav > :nth-child(4) > a'),
   };
 

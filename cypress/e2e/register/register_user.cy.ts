@@ -1,11 +1,7 @@
 /// <reference types="cypress" />
 
 import { registerAndDeleteUser, registerNewUser, signInAndDeleteUser } from '../../utils/userFlows';
-
 import { testUtils } from '../../utils/testUtils';
-
-const email = testUtils.generateRandomEmail();
-
 describe('Register', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -35,6 +31,7 @@ describe('Register', () => {
   });
 
   it('should show an error when password is missing during registration', () => {
+    const email = testUtils.generateRandomEmail();
     cy.navigateSignup();
     cp.loginPage.enterSignupName(fx.users.entity_03.fullName);
     cp.loginPage.enterSignupEmail(email);

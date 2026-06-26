@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 import { registerAndDeleteUser, registerNewUser, signInAndDeleteUser } from '../../utils/userFlows';
 
-//import { fx } from "cypress/fixtures";
-
 describe('Login', () => {
   beforeEach(() => {
     cy.visit('/');

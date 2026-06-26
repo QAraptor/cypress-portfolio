@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 import { usersApi } from '../../api/users.api';
 
 describe('Create Account API', () => {
